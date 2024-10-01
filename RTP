@@ -1,1 +1,6 @@
 // RTP=(Total Winnings / Total bet)×100
+
+
+double RTP = sum/(Settings.numberOfRounds*Settings.bet) * 100;    
+
+sum is the summery of all wins
