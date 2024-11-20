@@ -1,0 +1,33 @@
+In Java, nanoTime is a method provided by the System class that returns the current value of the most precise available system timer, in nanoseconds. 
+
+public class NanoTimeExample {
+    public static void main(String[] args) {
+        // Record the start time
+        long startTime = System.nanoTime();
+
+        // Perform the task you want to measure
+        performTask();
+
+        // Record the end time
+        long endTime = System.nanoTime();
+
+        // Calculate the elapsed time
+        long elapsedTime = endTime - startTime;
+
+        // Print the elapsed time in nanoseconds
+        System.out.println("Elapsed time in nanoseconds: " + elapsedTime);
+
+        // Optionally, convert the elapsed time to other units (e.g., milliseconds)
+        double elapsedTimeInMilliseconds = elapsedTime / 1_000_000.0;
+        System.out.println("Elapsed time in milliseconds: " + elapsedTimeInMilliseconds);
+    }
+
+    private static void performTask() {
+        // Simulate a task that takes some time
+        try {
+            Thread.sleep(500); // Sleep for 500 milliseconds
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+}
